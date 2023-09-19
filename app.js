@@ -1,10 +1,11 @@
 // todo: hacer el front de la calculadora
 const process = require('process');
 const {argv} = process ;
-function calculadora(comando) {
+const sumar= require('./sumar')
+function calculadora(comando,a,b) {
 switch (comando) {
     case "sumar":
-        
+        return sumar(a,b)
         break;
         case "restar":
         
@@ -19,4 +20,4 @@ switch (comando) {
     default:
         return "comando no valido"
 }}
-console.log(calculadora(argv[2],argv[3],argv[4]))
+console.log(calculadora(argv[2],+argv[3],+argv[4]))
